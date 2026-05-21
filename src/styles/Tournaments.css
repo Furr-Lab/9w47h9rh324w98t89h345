@@ -1,0 +1,111 @@
+.tournaments-page {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.tournaments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.tournament-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.tournament-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--accent-color));
+}
+
+.tournament-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.tournament-card h2 {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tournament-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tournament-meta p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tournament-meta p svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.btn-detail {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f59e0b 100%);
+  color: var(--bg-primary);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  font-weight: 600;
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-detail:hover {
+  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-detail svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .tournaments-grid { grid-template-columns: 1fr; }
+}

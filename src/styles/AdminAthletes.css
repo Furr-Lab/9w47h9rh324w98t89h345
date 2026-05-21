@@ -1,0 +1,84 @@
+.admin-athletes .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.admin-athletes .page-header h1 { margin: 0; }
+
+.athlete-form {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 30px;
+  border: 1px solid var(--border-glass);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.athlete-form input,
+.athlete-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.athlete-form textarea { grid-column: 1 / -1; min-height: 80px; }
+
+.athlete-form button {
+  padding: 12px;
+  font-weight: 600;
+}
+
+.athlete-form button[type="submit"] {
+  background: var(--gradient-1);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+}
+
+.athlete-form button[type="button"] {
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+}
+
+.athletes-table { overflow-x: auto; }
+
+.athletes-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.athletes-table th,
+.athletes-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.athletes-table th {
+  background: var(--table-header-bg);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.athletes-table tr:hover { background: var(--table-row-hover); }
+
+@media (max-width: 768px) {
+  .admin-athletes .page-header { flex-direction: column; gap: 15px; align-items: flex-start; }
+  .athlete-form { grid-template-columns: 1fr; }
+}

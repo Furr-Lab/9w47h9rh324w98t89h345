@@ -1,0 +1,105 @@
+.rankings-page {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-filter button {
+  padding: 12px 24px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-filter button svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+  background: linear-gradient(135deg, var(--accent-color), #f59e0b);
+  color: var(--bg-primary);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.rankings-table {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.rankings-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rankings-table th,
+.rankings-table td {
+  padding: 18px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.rankings-table th {
+  background: var(--table-header-bg);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rankings-table tbody tr { transition: var(--transition); }
+.rankings-table tr:hover { background: var(--table-row-hover); }
+.rankings-table tr:last-child td { border-bottom: none; }
+
+.rank {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.rank svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.points {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.wins { color: var(--success); font-weight: 600; }
+.losses { color: var(--error); font-weight: 600; }
+
+@media (max-width: 768px) {
+  .rankings-table table { font-size: 0.9rem; }
+  .rankings-table th, .rankings-table td { padding: 14px 12px; }
+}
